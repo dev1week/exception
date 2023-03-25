@@ -13,6 +13,7 @@ import com.example.exception.Exception.*;
 @RestController
 public class ApiExceptionController {
 
+
     @GetMapping("/api/members/{id}")
     public MemberDto getMember(@PathVariable("id") String id){
         if(id.equals("ex")){
@@ -26,6 +27,12 @@ public class ApiExceptionController {
             throw new UserException("사용자 예외");
         }
         return new MemberDto(id, "hello"+id);
+    }
+
+
+    @GetMapping("/api/response-status-ex1")
+    public String responseStatusEx1(){
+        throw new BadRequestException();
     }
 
     @Data
