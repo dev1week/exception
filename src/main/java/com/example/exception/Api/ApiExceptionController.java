@@ -17,6 +17,7 @@ public class ApiExceptionController {
             throw new RuntimeException("잘못된 사용자;");
         }
         if(id.equals("bas")){
+            //response.getWriter().println("")으로 json에 입력을 담아 반환할 수 있다. 
             throw new IllegalArgumentException("잘못된 입력값");
         }
         return new MemberDto(id, "hello"+id);
